@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ doctor?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <img [src]="doctor?.photo || 'assets/default-avatar.png'" alt="Foto del Doctor">
+    <ion-card-header>
+      <ion-card-title>{{ doctor?.name }}</ion-card-title>
+      <p>⭐ {{ doctor?.rating }}/5</p>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Ubicación:</strong> {{ doctor?.clinic_location }}</p>
+      <p><strong>Experiencia:</strong> {{ doctor?.experience }} años</p>
+      <p><strong>Teléfono:</strong> {{ doctor?.phone }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="primary" (click)="agendarCita()">Agendar Cita</ion-button>
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Administradores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Botón flotante para agregar un nuevo usuario -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="primary" (click)="openCreateUserModal()">
+      <ion-icon name="person-add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Lista de usuarios en formato de tarjetas -->
+  <ion-list>
+    <ion-card *ngFor="let user of users" class="user-card">
+      <ion-card-header>
+        <ion-card-title>{{ user.name }}</ion-card-title>
+        <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-button fill="clear" color="warning" (click)="editUser(user.id)">
+          <ion-icon name="pencil-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" color="danger" (click)="deleteUser(user.id)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+<!-- Modal para crear usuario -->
+<ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Nuevo Administrador</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">Cerrar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="newUser.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="newUser.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Permisos</ion-label>
+      <ion-input [(ngModel)]="newUser.permissions"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" color="success" (click)="createUser()">Crear Usuario</ion-button>
+  </ion-content>
+</ion-modal>

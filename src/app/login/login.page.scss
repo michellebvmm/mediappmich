@@ -1,0 +1,147 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #ffffff; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    margin-bottom: 15px;
+    width: 90%; // Ancho relativo para pantallas pequeñas
+    max-width: 400px; // Ancho máximo para pantallas grandes
+  }
+  
+  .custom-input {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #eac8d6; 
+    --padding-start: 16px; 
+    --padding-end: 16px; 
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; // Ancho completo
+  }
+  
+  .register-button {
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #4489af !important; 
+    color: #ffffff !important; 
+    transition: background-color 0.3s ease;
+    width: 100%; // Ancho completo
+  }
+  
+  .register-button:hover {
+    background-color: #59c4f6; 
+  }
+  
+  .register-button:focus {
+    outline: none; 
+    background-color: #8ab1ff;
+    color: #ffffff; 
+  }
+  
+  .header-image {
+    width: 80%;
+    height: auto; 
+    border-radius: 15px; 
+    margin-bottom: 20px; 
+  }
+  
+  .gif-container {
+    position: absolute; 
+    bottom: 10px; 
+    left: 10px;
+    z-index: 10; 
+    display: flex;
+    align-items: center; 
+  }
+  
+  .animated-gif {
+    width: 80px; // Ajusta el tamaño del GIF
+    height: auto; 
+    margin-right: 10px;
+  }
+  
+  .login-prompt {
+    font-size: 14px; 
+    color: #333;
+  }
+  
+  .login-prompt a {
+    color: #f66de4; 
+    text-decoration: none; 
+  }
+  
+  .login-prompt a:hover {
+    text-decoration: underline; 
+  }
+  
+  /* Media Queries para Responsividad */
+  @media (max-width: 600px) {
+    .form-container {
+      padding: 15px; // Reduce el padding en pantallas pequeñas
+    }
+  
+    .animated-gif {
+      width: 60px; // Ajusta el tamaño del GIF
+    }
+
+
+    .custom-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    }
+    
+    .modal-content {
+      background-color: #fff; /* Fondo blanco para el contenido */
+      border-radius: 15px; /* Bordes redondeados */
+      width: 90%; /* Ancho del modal */
+      max-width: 600px; /* Ancho máximo */
+      padding: 20px; /* Espaciado interno */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .close-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 24px; /* Tamaño del icono */
+    }
+    
+    .modal-body {
+      margin: 20px 0; /* Espaciado superior e inferior */
+      max-height: 70vh; /* Altura máxima del contenido */
+      overflow-y: auto; /* Habilitar desplazamiento vertical */
+    }
+    
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end; /* Alinear el botón a la derecha */
+    }
+    
+    .accept-button {
+      background-color: #28a745; /* Color de fondo del botón */
+      color: white; /* Color del texto */
+      border: none;
+      border-radius: 5px; /* Bordes redondeados */
+      padding: 10px 20px; /* Espaciado interno */
+      cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    }
+}

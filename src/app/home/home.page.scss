@@ -1,27 +1,28 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-list {
+  --ion-item-background: #f9f9f9; /* Fondo claro para los items */
+  --ion-item-border-color: #e0e0e0; /* Color de borde */
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-item {
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 10px; /* Espaciado entre items */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+h2 {
+  font-size: 1.2em; /* Tamaño de fuente para el nombre */
+  font-weight: bold; /* Negrita para el nombre */
 }
 
-#container a {
-  text-decoration: none;
+p {
+  margin: 0; /* Eliminar margen por defecto */
+}
+
+.doctor-specialty {
+  font-style: italic; /* Estilo en cursiva para la especialidad */
+  color: #666; /* Color gris para la especialidad */
+}
+
+ion-button {
+  margin-left: 10px; /* Espaciado a la izquierda del botón */
 }

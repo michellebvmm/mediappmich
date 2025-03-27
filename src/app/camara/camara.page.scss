@@ -1,0 +1,105 @@
+.camera-page {
+  background: linear-gradient(to bottom, #1e1e2f, #12121c);
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6fa8e1;
+  text-shadow: 2px 2px 10px rgba(111, 168, 225, 0.8);
+}
+
+.capture-button {
+  background: #6fa8e1;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(111, 168, 225, 0.5);
+  transition: 0.3s;
+}
+
+.capture-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(111, 168, 225, 0.8);
+}
+
+.image-container {
+  margin: 20px auto;
+  max-width: 90%;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.image-container ion-img {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.filters-container {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.filters-container ion-item {
+  --background: none;
+  --color: white;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.save-button {
+  background: #28a745;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.save-button:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background: #dc3545;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.delete-button:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+  img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.no-image {
+  text-align: center;
+  color: gray;
+}
+
+ion-button {
+  margin-top: 10px;
+}

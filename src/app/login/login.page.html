@@ -1,0 +1,116 @@
+<ion-header>
+</ion-header>
+
+<ion-content class="ion-padding" style="background-color: #fce4ec;">
+  <div class="form-container">
+    <img src="assets/imgs/enfermeria.jpg" alt="Pastelería" class="header-image" />
+    
+    <ion-input 
+      [(ngModel)]="email" 
+      placeholder="Correo" 
+      type="email" 
+      class="custom-input">
+    </ion-input>
+    
+    <ion-input 
+      [(ngModel)]="password" 
+      placeholder="Contraseña" 
+      type="password" 
+      class="custom-input">
+    </ion-input>
+    
+    <ion-button 
+      expand="full" 
+      (click)="login()" 
+      color="style"
+      class="register-button">
+      Iniciar Sesión
+    </ion-button>
+    <div class="ion-text-center">
+      <p>
+        Al continuar, aceptas nuestros 
+        <a (click)="openModal('terms')" style="color: blue;">Términos y Condiciones</a> 
+        y nuestra 
+        <a (click)="openModal('privacy')" style="color: blue;">Política de Privacidad</a>.
+      </p>
+    </div>
+    <!-- Mensaje de registro -->
+    <div class="ion-text-center" style="margin-top: 20px;">
+    </div>
+  </div>
+
+  <!-- Contenedor para el GIF en la parte inferior izquierda -->
+  <div class="gif-container">
+    <img src="assets/imgs/animacion.gif" alt="Animación" class="animated-gif" />
+    <div class="login-prompt">
+      <p>¿No tienes cuenta? 
+        <a (click)="navigateToRegister()" style="color: #f758fa;">Regístrate aquí</a>
+      </p>
+    </div>
+    
+  </div>
+
+  <div class="custom-modal" *ngIf="isModalOpen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>{{ modalTitle }}</h2>
+        <button class="close-button" (click)="closeModal()">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="modalType === 'terms'">
+          <p>
+            Estos términos y condiciones regulan el uso de la aplicación y los servicios ofrecidos. Al registrarte, aceptas cumplir con estos términos.
+          </p>
+          <p>
+            La aplicación permite a pacientes y doctores gestionar citas médicas. Los usuarios deben proporcionar información veraz y actualizada.
+          </p>
+          <p>
+            Los usuarios son responsables de mantener la confidencialidad de sus credenciales de acceso. No se permite el uso de la aplicación para fines ilegales o no autorizados.
+          </p>
+          <p>
+            Todos los derechos de propiedad intelectual relacionados con la aplicación son propiedad de la empresa. No se permite la reproducción, distribución o modificación sin autorización.
+          </p>
+          <p>
+            La empresa no se hace responsable de daños directos o indirectos derivados del uso de la aplicación. Se recomienda a los usuarios que consulten a profesionales de la salud para cualquier duda médica.
+          </p>
+          <p>
+            La empresa se reserva el derecho de modificar estos términos en cualquier momento. Los cambios serán notificados a los usuarios a través de la aplicación.
+          </p>
+          <p>
+            Estos términos se rigen por las leyes del país donde se encuentra registrada la empresa.
+          </p>
+        </div>
+        <div *ngIf="modalType === 'privacy'">
+          <p>
+            Esta política describe cómo recopilamos, usamos y protegemos la información personal de los usuarios.
+          </p>
+          <p>
+            Recopilamos datos como nombre, correo electrónico, número de teléfono y detalles de citas médicas.
+          </p>
+          <p>
+            Los datos se utilizan para gestionar citas, enviar recordatorios y mejorar nuestros servicios. No compartimos información personal con terceros sin el consentimiento del usuario.
+          </p>
+          <p>
+            Los usuarios tienen derecho a acceder, corregir o eliminar su información personal. Pueden ejercer estos derechos contactando a nuestro equipo de soporte.
+          </p>
+          <p>
+            Implementamos medidas de seguridad para proteger la información personal de los usuarios. Sin embargo, no podemos garantizar la seguridad absoluta de los datos transmitidos a través de Internet.
+          </p>
+          <p>
+            Nos reservamos el derecho de modificar esta política en cualquier momento. Los cambios serán comunicados a los usuarios a través de la aplicación.
+          </p>
+          <p>
+            Para preguntas o inquietudes sobre esta política, los usuarios pueden contactarnos a través del correo electrónico proporcionado en la aplicación.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="accept-button" (click)="closeModal()">Aceptar</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Enlaces para abrir el modal -->
+</ion-content>

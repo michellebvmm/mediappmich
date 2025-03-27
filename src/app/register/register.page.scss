@@ -1,0 +1,94 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+    border-radius: 20px;
+    background-color: #ffffff; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    margin-bottom: 15px;
+    width: 90%; 
+    max-width: 400px; 
+  }
+  
+  .custom-input {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #eac8d6; 
+    --padding-start: 16px; 
+    --padding-end: 16px; 
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  .register-button {
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #4489af !important; 
+    color: #ffffff !important; 
+    transition: background-color 0.3s ease;
+    width: 100%; 
+  }
+  
+  .register-button:hover {
+    background-color: #59c4f6; 
+  }
+  
+  .register-button:focus {
+    outline: none; 
+    background-color: #8ab1ff;
+    color: #ffffff; 
+  }
+  
+  .header-image {
+    width: 100%;
+    height: auto; 
+    border-radius: 15px; 
+    margin-bottom: 20px; 
+  }
+  
+  .gif-container {
+    position: absolute; 
+    bottom: 10px; 
+    left: 10px;
+    z-index: 10; 
+    display: flex;
+    align-items: center; 
+  }
+  
+  .animated-gif {
+    width: 80px; 
+    height: auto; 
+    margin-right: 10px;
+  }
+  
+  .login-prompt {
+    font-size: 14px; 
+    color: #333;
+  }
+  
+  .login-prompt a {
+    color: #f66de4; 
+    text-decoration: none; 
+  }
+  
+  .login-prompt a:hover {
+    text-decoration: underline; 
+  }
+  
+  @media (max-width: 600px) {
+    .form-container {
+      padding: 15px;
+    }
+  
+    .animated-gif {
+      width: 60px; 
+    }
+  
+    .login-prompt {
+      font-size: 12px; 
+    }
+  }

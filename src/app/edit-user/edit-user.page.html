@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-container">
+    <form (submit)="saveUser ()">
+      <ion-item>
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input [(ngModel)]="user.username" name="username" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input [(ngModel)]="user.email" name="email" type="email" disabled></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Rol</ion-label>
+        <ion-input [(ngModel)]="user.rol" name="rol" type="text" disabled></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" color="primary" class="save-button">
+        <ion-icon slot="start" name="save-outline"></ion-icon>
+        Guardar Cambios
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        Volver
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="danger">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

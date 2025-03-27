@@ -1,0 +1,29 @@
+.form-container {
+    background-color: #ffffff; // Fondo blanco para el contenedor
+    border-radius: 10px; // Bordes redondeados
+    padding: 20px; // Espaciado interno
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra sutil
+    margin: 20px; // Margen alrededor del contenedor
+  }
+  
+  ion-item {
+    margin-bottom: 15px; // Espaciado entre los ítems
+  }
+  
+  ion-label {
+    color: #333; // Color del texto de las etiquetas
+  }
+  
+  ion-input {
+    --background: #f9f9f9; // Color de fondo del input
+    --border-color: #e0e0e0; // Color del borde del input
+  }
+  
+  ion-footer {
+    background-color: #f8f9fa; // Color de fondo claro
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); // Sombra sutil
+  }
+  
+  ion-button {
+    font-weight: bold; // Hacer el texto más audaz
+  }

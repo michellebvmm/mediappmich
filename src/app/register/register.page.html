@@ -1,0 +1,44 @@
+<ion-header>
+</ion-header>
+
+<ion-content class="ion-padding" style="background-color: #fce4ec;">
+  <div class="form-container">
+    <img src="assets/imgs/enfermeria.jpg" alt="Pastelería" class="header-image" />
+    <ion-input 
+      [(ngModel)]="username" 
+      placeholder="Username" 
+      type="text" 
+      class="custom-input">
+    </ion-input>
+    
+    <ion-input 
+      [(ngModel)]="email" 
+      placeholder="example@gmail.com" 
+      type="email" 
+      class="custom-input">
+    </ion-input>
+    
+    <ion-input 
+      [(ngModel)]="password" 
+      placeholder="Password" 
+      type="password" 
+      class="custom-input">
+    </ion-input>
+    
+    <ion-button 
+      expand="full" 
+      color="style" 
+      (click)="register()" 
+      class="register-button">
+      Registrar
+    </ion-button>
+  </div>
+
+  <!-- Contenedor para el GIF y el texto -->
+  <div class="gif-container">
+    <img src="assets/imgs/animacion.gif" alt="Animación" class="animated-gif" />
+    <div class="login-prompt">
+      <p>¿Ya tienes cuenta? <a href="/login">Inicia sesión</a></p>
+    </div>
+  </div>
+</ion-content>
