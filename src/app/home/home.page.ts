@@ -41,8 +41,15 @@ export class HomePage implements OnInit {
   editUser(uid: string) {
     console.log('Editar usuario con UID:', uid);
   }  
+  navigateToProfile() {
+    this.router.navigate(['/perfil']);
+  }
+
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
 
   logout() {
-    console.log("Cerrar sesión");
+    this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
   }
 }

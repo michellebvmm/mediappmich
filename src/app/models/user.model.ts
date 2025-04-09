@@ -11,4 +11,5 @@ export interface User {
     rol: DocumentReference; 
     tipo_usuario: String;
     last_login: FieldValue; 
+    photo?: string; // <-- Hacerlo opcional
 }

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="profile-container">
+    <ion-avatar class="profile-avatar" (click)="goToCamera()">
+      <img [src]="users.photo || 'assets/default-avatar.png'" alt="Foto de Perfil">
+    </ion-avatar>    
+    
+    <form (ngSubmit)="saveUser()" class="profile-form">
+      <ion-item class="input-field">
+        <ion-label position="floating">Nombre de Usuario</ion-label>
+        <ion-input [(ngModel)]="users.username" name="username" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-field">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="users.email" name="email" required type="email"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-field">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="users.newPassword" name="newPassword" type="password" disabled></ion-input>
+      </ion-item>      
+
+      <ion-button expand="full" type="submit" class="update-button">Actualizar</ion-button>
+    </form>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="navigateToProfile()">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

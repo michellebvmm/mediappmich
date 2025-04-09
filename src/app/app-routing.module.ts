@@ -15,8 +15,12 @@ const routes: Routes = [
     loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule)
   },
   {
-    path: 'doctor-detail',
-    loadChildren: () => import('./doctor-detail/doctor-detail.module').then( m => m.DoctorDetailPageModule)
+    path: 'doctor-detail/:id',
+    loadChildren: () => import('./doctor-detail/doctor-detail.module').then(m => m.DoctorDetailPageModule)
+  },  
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
 ];
 

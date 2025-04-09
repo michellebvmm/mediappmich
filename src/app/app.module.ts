@@ -8,15 +8,20 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app'; // Inicia
 import { provideAuth, getAuth } from '@angular/fire/auth'; // Provee Auth con la nueva API
 import { provideFirestore, getFirestore } from '@angular/fire/firestore'; // Provee Firestore con la nueva API
 import { environment } from '../environments/environment'; // Configuración de Firebase
+import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
+// Importa el FullCalendarModule
+import { FullCalendarModule } from '@fullcalendar/angular'; // <--- Importar
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    FullCalendarModule, 
     IonicModule.forRoot(),
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)), // Inicializa Firebase con la configuración
     provideAuth(() => getAuth()), // Provee Auth con la nueva API
+    HttpClientModule, // Asegúrate de agregarlo aquí
     provideFirestore(() => getFirestore()), // Provee Firestore con la nueva API
   ],
   providers: [],

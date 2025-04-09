@@ -9,6 +9,7 @@ import { addDoc } from 'firebase/firestore';
 })
 export class UserService {
   private usersCollection = collection(firestore, 'users');
+  getUser: any;
 
   constructor(private authService: AuthService) {}
 
@@ -23,7 +24,7 @@ export class UserService {
     const snapshot = await getDocs(this.usersCollection);
     return snapshot.docs.map(doc => ({ uid: doc.id, ...doc.data() }));  // Cambié 'id' por 'uid'
   }
-
+  
   // Obtener un usuario por ID
   async getUserById(userId: string) {
     const userDocRef = doc(firestore, 'users', userId);
@@ -35,7 +36,7 @@ export class UserService {
 
     return { id: userDoc.id, ...userDoc.data() };
   }
-
+  
   async updateUser(userId: string, data: any) {
     const user = this.authService.getUser();
 

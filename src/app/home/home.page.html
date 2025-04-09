@@ -1,29 +1,47 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Doctores Disponibles</ion-title>
+  <ion-toolbar color="style">
+    <ion-title class="ion-text-center">Bienvenido a <strong>MediApp</strong></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-item *ngFor="let doctor of doctors" (click)="verDoctor(doctor.userId)" detail>
+<ion-content class="ion-padding" [fullscreen]="true" class="custom-bg">
+  <ion-list class="ion-no-padding">
+    <ion-item
+      *ngFor="let doctor of doctors"
+      (click)="verDoctor(doctor.userId)"
+      detail
+      lines="none"
+      class="custom-doctor-card ion-margin-vertical ion-padding"
+    >
       <ion-avatar slot="start">
         <img [src]="doctor.photo || 'assets/default-avatar.png'" alt="Foto del Doctor">
       </ion-avatar>
+
       <ion-label>
-        <h2>{{ doctor.name }}</h2>
-        <p>⭐ {{ doctor.rating }}/5</p>
-        <p class="doctor-specialty">{{ doctor.specialty || 'Especialidad no especificada' }}</p>
+        <h2 class="ion-text-wrap" style="font-weight: 600; font-size: 1.1rem;">{{ doctor.name }}</h2>
+        <p style="margin: 4px 0; color: #f4b400;">⭐ {{ doctor.rating || '0' }}/5</p>
+        <p class="doctor-specialty" style="color: #666; font-size: 0.9rem;">
+          {{ doctor.specialty || 'Especialidad no especificada' }}
+        </p>
       </ion-label>
-      <ion-button fill="outline" slot="end">Ver Detalles</ion-button>
+
+      <ion-button fill="outline" color="medium" slot="end" size="small">Ver Detalles</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="navigateToProfile()">
+        <ion-icon slot="icon-only" name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="logout()" color="danger">
+      <ion-button (click)="navigateToHome()">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()">
         <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>

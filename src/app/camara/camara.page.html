@@ -1,48 +1,70 @@
-<ion-content [fullscreen]="true" class="ion-padding camera-page">
-  <ion-button expand="full" (click)="takePhoto()" class="capture-button">
-    📷 Tomar Foto
-  </ion-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cámara
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <div *ngIf="capturedImage" class="image-container">
-    <ion-img [src]="capturedImage" [ngStyle]="{'filter': finalFilter}"></ion-img>
+<ion-content>
+  <!-- Contenedor de la cámara -->
+  <div class="camera-container">
+    <!-- Vista previa de la imagen capturada -->
+    <img *ngIf="capturedImage" [src]="capturedImage" alt="Imagen capturada" />
+
+    <!-- Filtros para editar la imagen -->
+    <div class="filters-container" *ngIf="capturedImage">
+      <ion-item>
+        <ion-label>Brillo</ion-label>
+        <ion-range min="0" max="2" step="0.1" [(ngModel)]="brightness" (ionChange)="updateFilter()"></ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Contraste</ion-label>
+        <ion-range min="0" max="2" step="0.1" [(ngModel)]="contrast" (ionChange)="updateFilter()"></ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Saturación</ion-label>
+        <ion-range min="0" max="2" step="0.1" [(ngModel)]="saturate" (ionChange)="updateFilter()"></ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Opacidad</ion-label>
+        <ion-range min="0" max="1" step="0.1" [(ngModel)]="opacity" (ionChange)="updateFilter()"></ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Desenfoque</ion-label>
+        <ion-range min="0" max="10" step="0.1" [(ngModel)]="blur" (ionChange)="updateFilter()"></ion-range>
+      </ion-item>
+    </div>
+
+    <ion-button expand="full" (click)="takePhoto()">Tomar Foto</ion-button>
+
+
+    <ion-button expand="full" (click)="saveImage()" *ngIf="capturedImage">Guardar Foto</ion-button>
+
+    <ion-button expand="full" color="danger" (click)="deleteImage()" *ngIf="capturedImage">Eliminar Imagen</ion-button>
   </div>
 
-  <div *ngIf="capturedImage" class="filters-container">
-    <ion-item>
-      <ion-label>🌞 Brillo</ion-label>
-      <ion-range min="0" max="2" step="0.1" [(ngModel)]="brightness" (ionChange)="updateFilter()"></ion-range>
-    </ion-item>
 
-    <ion-item>
-      <ion-label>🎨 Contraste</ion-label>
-      <ion-range min="0" max="3" step="0.1" [(ngModel)]="contrast" (ionChange)="updateFilter()"></ion-range>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>🌈 Saturación</ion-label>
-      <ion-range min="0" max="3" step="0.1" [(ngModel)]="saturate" (ionChange)="updateFilter()"></ion-range>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>👻 Opacidad</ion-label>
-      <ion-range min="0" max="1" step="0.1" [(ngModel)]="opacity" (ionChange)="updateFilter()"></ion-range>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>🔎 Desenfoque</ion-label>
-      <ion-range min="0" max="10" step="0.5" [(ngModel)]="blur" (ionChange)="updateFilter()"></ion-range>
-    </ion-item>
-  </div>
-
-  <div *ngIf="capturedImage" class="buttons-container">
-    <ion-button expand="full" color="success" (click)="saveImage()" class="save-button">
-      💾 Guardar Imagen
-    </ion-button>
-    <ion-button expand="full" color="danger" (click)="deleteImage()" class="delete-button">
-      🗑️ Eliminar Imagen
-    </ion-button>
-  </div>
-
-  <canvas #imageCanvas hidden></canvas>
+  <canvas #imageCanvas style="display:none"></canvas>
 </ion-content>
-
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="navigateToProfile()">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

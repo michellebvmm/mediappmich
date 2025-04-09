@@ -26,3 +26,20 @@ p {
 ion-button {
   margin-left: 10px; /* Espaciado a la izquierda del botón */
 }
+.custom-bg {
+  background: linear-gradient(to bottom right, #e3f2fd, #fce4ec);
+}
+
+.custom-doctor-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.custom-doctor-card:hover {
+  transform: scale(1.01);
+}
+ion-toolbar{
+background-color: rgb(104, 160, 176);
+}

@@ -1,0 +1,48 @@
+::ng-deep full-calendar {
+    width: 100%;
+    max-width: 100%;
+  }
+  .custom-alert {
+    --background: #f0f8ff;
+    --color: #000;
+  
+    .alert-wrapper {
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  
+    .alert-button {
+      color: #3880ff;
+      font-weight: bold;
+    }
+  }
+  /* Estilos para el contenedor del mapa */
+#map {
+    height: 300px; /* Altura del mapa */
+    border-radius: 16px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    margin-top: 20px; /* Espacio superior */
+  }
+  
+  /* Estilos para el marcador de Leaflet */
+  .leaflet-marker-icon {
+    background-color: #3880ff; /* Color de fondo del marcador */
+    border-radius: 50%; /* Hacer el marcador redondo */
+    border: 2px solid white; /* Borde blanco */
+    width: 30px; /* Ancho del marcador */
+    height: 30px; /* Altura del marcador */
+  }
+  
+  /* Estilos para el popup del marcador */
+  .leaflet-popup {
+    background-color: #f0f8ff; /* Color de fondo del popup */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el popup */
+    color: #000; /* Color del texto */
+  }
+  
+  /* Estilos para el texto dentro del popup */
+  .leaflet-popup-content {
+    font-weight: bold; /* Texto en negrita */
+  }

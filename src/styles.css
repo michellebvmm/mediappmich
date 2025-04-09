@@ -1,0 +1,4 @@
+/* Asegúrate de que la altura del mapa esté configurada */
+#map {
+    height: 300px; /* Ajusta la altura según sea necesario */
+  }
